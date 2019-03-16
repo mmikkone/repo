@@ -16,7 +16,7 @@ using namespace std;
 class GameTable
 {
 private:
-    shared_ptr<UI> ui;                                  //Pointer to UI.
+    unique_ptr<UI> ui;                                  //Pointer to UI.
     uint8_t x, y;                                       //Cursor coordinates
     bool initialized = false;                           //Is UI initialized?
     vector<vector<bool> > table;                        //Game table. If cell is alive, it's value is true;
@@ -32,7 +32,10 @@ private:
 
 public:
 
-    GameTable(shared_ptr<UI>);
+    /**
+     * @brief Constructs GameTable and takes ownership of UI*.
+     */
+    GameTable(UI*);
 
     /**
      * @brief Plays the game.

@@ -4,7 +4,7 @@
 #include <chrono>
 #include <thread>
 
-GameTable::GameTable(shared_ptr<UI> ui):
+GameTable::GameTable(UI* ui):
     ui(ui),
     x(0),
     y(0)

@@ -6,9 +6,7 @@ using namespace std;
 
 int main()
 {
-    shared_ptr<WinConsoleUI> ui(new WinConsoleUI);
-
-    GameTable gametable(ui);
+    GameTable gametable(new WinConsoleUI);
 
     gametable.play();
 
