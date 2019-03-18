@@ -17,10 +17,10 @@ class GameTable
 {
 private:
     unique_ptr<UI> ui;                                  //Pointer to UI.
-    uint8_t x, y;                                       //Cursor coordinates
     bool initialized = false;                           //Is UI initialized?
 
 protected:
+    uint8_t x, y;                                       //Cursor coordinates
     vector<vector<bool> > table;                        //Game table. If cell is alive, it's value is true;
 
     void cursorUp();                                    //Moves cursor on the game table.
