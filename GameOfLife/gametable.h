@@ -17,9 +17,9 @@ class GameTable
 {
 private:
     unique_ptr<UI> ui;                                  //Pointer to UI.
-    bool initialized = false;                           //Is UI initialized?
 
 protected:
+    bool initialized = false;                           //Is UI initialized?
     uint8_t x, y;                                       //Cursor coordinates
     vector<vector<bool> > table;                        //Game table. If cell is alive, it's value is true;
 
