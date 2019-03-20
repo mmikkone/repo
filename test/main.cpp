@@ -19,11 +19,14 @@ public:
     {
     }
 
-    //TODO destructor
+    ~Fifo()
+    {
+        delete[] array_;
+    }
 
     void resize(int newcapacity)
     {
-        T* new_array = new T[newcapacity];
+        T* new_array = new T[static_cast<unsigned int>(newcapacity)];
         int copysize;
         newcapacity > size_ ? copysize = size_ : copysize = newcapacity;
         for(int i=0; i<copysize; i++) new_array[i] = array_[i];
